@@ -1,0 +1,37 @@
+using UnityEngine;
+using ZombieSurvival.General;
+
+namespace ZombieSurvival.Abilities
+{
+    public class GunProjectile : Projectile
+    {
+        [SerializeField] private ParticleSystem _sparkParticle;
+        [SerializeField] private TrailRenderer _trail;
+
+        public override void Initialize(ProjectileAbilityStats stats, ProjectileWeapon weapon, TagList targetTags = null)
+        {
+            base.Initialize(stats, weapon, targetTags);
+
+            if (_sparkParticle != null)
+            {
+                _sparkParticle.Stop();
+
+                var main = _sparkParticle.main;
+
+                main.startLifetime = _releaseDelay.Value;
+                main.duration = _releaseDelay.Value;
+
+                _sparkParticle.transform.localScale = new Vector3(stats.ProjectileSize.Value, stats.ProjectileSize.Value, stats.ProjectileSize.Value);
+                _sparkParticle.Play();
+            }
+            else if (_isDebug) Debug.Log("Missing spark particle");
+        }
+
+        public override void Throw(Vector3 direction)
+        {
+            base.Throw(direction);
+
+            _trail.Clear();
+        }
+    }
+}

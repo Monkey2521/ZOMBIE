@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20aecba32ae00a4abec16d70e86a582, type: 3}
+  m_Name: Desert1 Currency reward 60%
+  m_EditorClassIdentifier: 
+  _currencyRewards:
+  - _currencyValue: 20
+    _currencyData: {fileID: 11400000, guid: 243ef12a393101a409409035e2468507, type: 2}
+  - _currencyValue: 2
+    _currencyData: {fileID: 11400000, guid: 0c00ba53629440040b9f11659238dde3, type: 2}
+  - _currencyValue: 2
+    _currencyData: {fileID: 11400000, guid: 24ab4d6f94095ad409ae97126a0bbc55, type: 2}
+  - _currencyValue: 1
+    _currencyData: {fileID: 11400000, guid: 619b52980deeb98469ad8524260d52fa, type: 2}

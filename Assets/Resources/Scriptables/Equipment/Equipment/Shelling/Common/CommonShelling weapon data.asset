@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f683fb86702e54641ac277bc6de86703, type: 3}
+  m_Name: CommonShelling weapon data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _id: 42
+  _icon: {fileID: 21300000, guid: 166e37bf1d8929e4c925b91c7f2fe6e0, type: 3}
+  _level:
+    _baseValue: 1
+    _minValue: 1
+    _maxValue: 10
+    _maxValueIsInfinite: 0
+  _upgradingStat: 0
+  _equipSlot: {fileID: 11400000, guid: 0ebd1e8d252cdf746b2783f0984702d6, type: 2}
+  _rarity: {fileID: 11400000, guid: 5369baa3ebb2b954181937e8aa8eb21c, type: 2}
+  _equipmentUpgrades:
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 2faf4a9792d14b744b914dc51ec640c5, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: 99a131fac62669344961bce5479d3776, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: 58200f3df8e584144a413042b90f5678, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 100
+        _requiredMaterialAmount: 1
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: ced2f5a51e862574ebb42ac50d06684f, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 150
+        _requiredMaterialAmount: 1
+    - _requiredLevel: 4
+      _upgradeData: {fileID: 11400000, guid: 810fc517ab026944889a67e43acb5af2, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 200
+        _requiredMaterialAmount: 2
+    - _requiredLevel: 5
+      _upgradeData: {fileID: 11400000, guid: a1391dfa74e64dd49b50eb0583f9dc3b, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 250
+        _requiredMaterialAmount: 2
+    - _requiredLevel: 6
+      _upgradeData: {fileID: 11400000, guid: 5772ca673034a8f43bc6c5551a6b912f, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 300
+        _requiredMaterialAmount: 3
+    - _requiredLevel: 7
+      _upgradeData: {fileID: 11400000, guid: 8b67b9d0e39459f4d81fb8c6303b4552, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 350
+        _requiredMaterialAmount: 3
+    - _requiredLevel: 8
+      _upgradeData: {fileID: 11400000, guid: facc6623d5a3fe44aa86f2b221980459, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 400
+        _requiredMaterialAmount: 3
+    - _requiredLevel: 9
+      _upgradeData: {fileID: 11400000, guid: 13b57d4e3546a814186ee986ba3cc9d2, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 450
+        _requiredMaterialAmount: 4
+    - _requiredLevel: 10
+      _upgradeData: {fileID: 11400000, guid: 328b81217b79c4849ad1cd12db5f34fc, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 500
+        _requiredMaterialAmount: 5
+  _displayRarityDescription: 1
+  _rarityDescription: Start battle with Shelling
+  _rarityUpgrade: {fileID: 11400000, guid: 32f3b608a4a931f4aa324e0f28ca8e28, type: 2}
+  _previousRarityEquipment: {fileID: 0}
+  _nextRarityEquipment: {fileID: 11400000, guid: c78812d9b20af364a95f7fec7e32303b, type: 2}
+  _playerBaseWeaponOnEquip: {fileID: 3292791445449446341, guid: 3c52f6bb14b194b4bb5b69ff9f00acd5, type: 3}

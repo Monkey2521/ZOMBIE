@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bba95325cedcd49bd10c6642bc08f3, type: 3}
+  m_Name: Desert1 Boss Pickables reward data 1
+  m_EditorClassIdentifier: 
+  _pickablesRewards:
+  - {fileID: 8646626118518610621, guid: 6b2a122572d48f141a86832048523411, type: 3}
+  - {fileID: 2749685798053475342, guid: c50b6079a99dd0849a6fdf6079ada395, type: 3}
+  - {fileID: 2749685798053475342, guid: c50b6079a99dd0849a6fdf6079ada395, type: 3}
+  - {fileID: 2749685798053475342, guid: c50b6079a99dd0849a6fdf6079ada395, type: 3}

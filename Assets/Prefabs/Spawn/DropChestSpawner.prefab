@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5863328757230750371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5733476968982346860}
+  - component: {fileID: 3763541597869820498}
+  m_Layer: 0
+  m_Name: DropChestSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5733476968982346860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863328757230750371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3763541597869820498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863328757230750371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921407d437a7f104abba9cf43edcfb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _spawnDeltaDistance: 15
+  _rewardChestPrefab: {fileID: 4231006293177933437, guid: a4f62fe21138b984885985d5403c7b25, type: 3}
+  _poolSize: 5
+  _pickablesSpawnChances:
+    _spawnChances:
+    - _object: {fileID: 1696611306766926163, guid: e7e43a8cedf45e142a06ec792a0fa012, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 15b7331bb348fa44cb205d9a6f078a56, type: 2}
+    - _object: {fileID: -7406759930389893393, guid: a333f7e5fb06f994d9eb51c9da2f4e7a, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
+    - _object: {fileID: 4054160962229758727, guid: 0b944a27b5c94a741bd58ba2390f903d, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: aa696114e5030d947b21415c507f1cc2, type: 2}
+    - _object: {fileID: 1746405420282785678, guid: 9cd75a8384baf094db96b670f0778554, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 9b4d1e66be8eeaf41b6632f0a761af53, type: 2}
+    - _object: {fileID: 5746802156134938016, guid: 2fe46d49c93f3bb49abb8e0576f7f064, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 1fb6b7f5af78b1d4d9f407d1e83eee96, type: 2}
+    - _object: {fileID: 2749685798053475342, guid: c50b6079a99dd0849a6fdf6079ada395, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 887a64fa2605af342bf6fb76f7e86fd1, type: 2}
+    - _object: {fileID: 9162424608586217704, guid: 04c51c63f52daaa4eb5d6b23b04170e2, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: ab96bd229158773429a7ebaba1537961, type: 2}
+    - _object: {fileID: 1696611306766926163, guid: e39c52b76dac5cc439c73b1d4c85e8f2, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 2bf2fbaed06d2f745b11f16eec061ea4, type: 2}
+    - _object: {fileID: 1696611306766926163, guid: 2ae6f41b9e879914a89a41a14d6eac81, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: a49380d6df7437f4790acfeaf189f1ce, type: 2}
+    - _object: {fileID: 1696611306766926163, guid: df883aba726ea5f4f82b8ce3b79500ba, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 090e5d805e2c454499c996fdc555ea92, type: 2}
+    - _object: {fileID: 8646626118518610621, guid: 6b2a122572d48f141a86832048523411, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 29d3754afd9bfd843b8b78e33953fe99, type: 2}
+    - _object: {fileID: 1696611306766926163, guid: 5059c90477cbd694abf25a0e75f14fa4, type: 3}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 9d83e41c7ec7e04419db199c058e0988, type: 2}
+  _spawnCooldown: 12

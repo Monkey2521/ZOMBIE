@@ -1,0 +1,410 @@
+using System;
+using System.Collections.Generic;
+
+using UnityEngine;
+
+using ZombieSurvival.Abilities;
+using ZombieSurvival.Characters;
+using ZombieSurvival.Events;
+using ZombieSurvival.General;
+using ZombieSurvival.Stats;
+using ZombieSurvival.UI.GameMenus.Pause;
+
+using Zenject;
+using ZombieSurvival.Upgrades;
+
+namespace ZombieSurvival.UI.Abilities
+{
+    public sealed class AbilityGiver : ZSMonoBehaviour, IPlayerLevelUpHandler
+    {
+        [Header("AbilityGiver settings")]
+        [SerializeField] private UIMenu _menu;
+        [SerializeField] private GameObject _refreshButton;
+        [Tooltip("Add X combined abilities in pool")]
+        [SerializeField][Range(0, 10)] int _combineAdditionalCount = 5;
+        [SerializeField] private List<Upgrade> _additionalUpgradesForEachChoice;
+
+        [Space(5)]
+        [SerializeField] private RectTransform _abilityUIParent;
+        [SerializeField] private AbilityUI _abilityUIPrefab;
+
+        [Space(5)]
+        [SerializeField] private AbilitySlot _abilitySlotPrefab;
+        [SerializeField] private Transform _weaponSlotsParent;
+        [SerializeField] private Transform _passiveSlotsParent;
+
+        [Space(5)]
+        [SerializeField] private AbilitiesList _availableAbilities;
+
+        private List<AbilitySlot> _weaponSlots;
+        private List<AbilitySlot> _passiveSlots;
+
+        private AbilitiesPerChoice _abilitiesPerChoice;
+        private AbilityChooseCount _abilityChooseCount;
+        private AbilitiesRerollCount _abilitiesRerollCount;
+
+        private int _rerolls;
+
+        private List<AbilityUI> _abilitiesUI;
+        private List<AbilityContainer> _abilities;
+
+        private int _levelUps;
+        private bool _onChoice;
+
+
+        [Inject] private Player _player;
+
+        private void OnEnable()
+        {
+            EventBus.Subscribe(this);
+
+            _abilityChooseCount = (_player.Stats as PlayerStats).AbilityChooseCount;
+            _abilitiesPerChoice = (_player.Stats as PlayerStats).AbilitiesPerChoice;
+            _abilitiesRerollCount = (_player.Stats as PlayerStats).AbilitiiesRerollCount;
+
+            _rerolls = 0;
+
+            _abilities = new List<AbilityContainer>(_availableAbilities.Abilities);
+
+            InitializeAbilitiesUI();
+            InitializePlayerInventory();
+
+            _levelUps = 0;
+            _onChoice = false;
+        }
+
+        private void OnDisable()
+        {
+            EventBus.Unsubscribe(this);
+        }
+
+        [ContextMenu("Get ability")]
+        public void OnPlayerLevelUp()
+        {
+            _levelUps += (int)_abilityChooseCount.Value;
+
+            if (!_onChoice)
+            {
+                SetAbilities();
+            }
+
+            _onChoice = true;
+        }
+
+        /// <summary>
+        /// Enable ability menu for choosing new ability or upgrade existing
+        /// </summary>
+        public void SetAbilities()
+        {
+            _menu.MainMenuDisplay();
+
+            InitializeAbilitiesUI();
+
+            if (_rerolls >= _abilitiesRerollCount.Value)
+            {
+                _refreshButton.SetActive(false);
+            }
+            else
+            {
+                _refreshButton.SetActive(true);
+            }
+
+            List<AbilityContainer> abilities = GetRandomAbilities((int)_abilitiesPerChoice.Value);
+
+            for (int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
+            {
+                if (i >= abilities.Count || i > _abilitiesUI.Count)
+                {
+                    if (_isDebug) Debug.Log("Abilities error!");
+
+                    Time.timeScale = 1;
+                    _onChoice = false;
+
+                    _menu.MainMenuHide();
+                    return;
+                }
+
+                _abilitiesUI[i].SetAbility(abilities[i]);
+            }
+        }
+
+        /// <summary>
+        /// Create AbilitiesUI based on AbilitiesPerLevel
+        /// </summary>
+        private void InitializeAbilitiesUI()
+        {
+            if (_abilitiesUI != null && _abilitiesUI.Count != (int)_abilitiesPerChoice.Value)
+            {
+                foreach (AbilityUI abilityUI in _abilitiesUI)
+                {
+                    Destroy(abilityUI.gameObject);
+                }
+
+                _abilitiesUI.Clear();
+
+                for (int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
+                {
+                    AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
+
+                    abilityUI.Initialize(this);
+
+                    _abilitiesUI.Add(abilityUI);
+                }
+            }
+            else if (_abilitiesUI == null)
+            {
+                _abilitiesUI = new List<AbilityUI>((int)_abilitiesPerChoice.Value);
+
+                for (int i = 0; i < (int)_abilitiesPerChoice.Value; i++)
+                {
+                    AbilityUI abilityUI = Instantiate(_abilityUIPrefab, _abilityUIParent);
+
+                    abilityUI.Initialize(this);
+
+                    _abilitiesUI.Add(abilityUI);
+                }
+            }
+        }
+
+        public void InitializePlayerInventory()
+        {
+            _weaponSlots = new List<AbilitySlot>(_player.AbilityInventory.MaxActiveAbilitiesCount);
+            _passiveSlots = new List<AbilitySlot>(_player.AbilityInventory.MaxPassiveAbilitiesCount);
+
+            for (int i = 0; i < _player.AbilityInventory.MaxActiveAbilitiesCount; i++)
+            {
+                _weaponSlots.Add(Instantiate(_abilitySlotPrefab, _weaponSlotsParent));
+                _weaponSlots[i].AbilityIcon.enabled = false;
+            }
+
+            for (int i = 0; i < _player.AbilityInventory.MaxPassiveAbilitiesCount; i++)
+            {
+                _passiveSlots.Add(Instantiate(_abilitySlotPrefab, _passiveSlotsParent));
+                _passiveSlots[i].AbilityIcon.enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Return X random abilities</returns>
+        public List<AbilityContainer> GetRandomAbilities(int count)
+        {
+            CleanupAbilities();
+
+            _abilities.AddRange(GetPlayerAbilities());
+
+            #region Getting random abilities
+            List<AbilityContainer> randomAbilities = new List<AbilityContainer>(count);
+            List<AbilityContainer> abilitiesSet = GetSet(_abilities);
+
+            for (int currentCount = 0; currentCount < count; currentCount++)
+            {
+                AbilityContainer randomAbility;
+
+                if (abilitiesSet.Count <= randomAbilities.Count) // add additional abilities (like more gold or heal)
+                {
+                    randomAbility = _availableAbilities.AdditionalAbilities[UnityEngine.Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+                }
+                else
+                {
+                    do
+                    {
+                        randomAbility = _abilities[UnityEngine.Random.Range(0, _abilities.Count)];
+                    } while (randomAbilities.Contains(randomAbility)); // get random ability without repeating
+                }
+
+                randomAbilities.Add(randomAbility);
+            }
+            #endregion
+
+            return randomAbilities;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>Return X abilities upgrades based on abilities that player getted</returns>
+        public List<AbilityContainer> GetAbilitiesUpgrades(int count)
+        {
+            List<AbilityContainer> abilitiesUpgrades = GetPlayerAbilities(onlyInPlayerInventory: true);
+            List<AbilityContainer> abilitiesSet = GetSet(abilitiesUpgrades);
+            List<AbilityContainer> randomUpgrades = new List<AbilityContainer>(count);
+
+            for (int currentCount = 0; currentCount < count; currentCount++)
+            {
+                AbilityContainer randomAbility;
+
+                if (abilitiesSet.Count <= randomUpgrades.Count) // add additional abilities (like more gold or heal)
+                {
+                    randomAbility = _availableAbilities.AdditionalAbilities[UnityEngine.Random.Range(0, _availableAbilities.AdditionalAbilities.Count)];
+                }
+                else
+                {
+                    do
+                    {
+                        randomAbility = abilitiesUpgrades[UnityEngine.Random.Range(0, abilitiesUpgrades.Count)];
+                    } while (randomUpgrades.Contains(randomAbility)); // get random ability without repeating
+                }
+
+                randomUpgrades.Add(randomAbility);
+            }
+
+            return randomUpgrades;
+        }
+
+        private List<AbilityContainer> GetPlayerAbilities(bool onlyInPlayerInventory = false)
+        {
+            List<AbilityContainer> abilities = new List<AbilityContainer>();
+            AbilityInventory playerInventory = _player.AbilityInventory;
+
+            foreach (AbilityContainer playerAbility in playerInventory.Abilities) // add abilities that player have in inventory
+            {
+                int inInventory = abilities.FindAll(item => item.Name.Equals(playerAbility.Name)).Count;
+
+                if (!playerAbility.IsMaxLevel)
+                {
+                    for (int i = 0; i < _combineAdditionalCount - inInventory; i++)
+                        abilities.Add(playerAbility);
+                }
+
+                if (onlyInPlayerInventory) continue;
+
+                List<AbilityCombination> combinedAbilities = playerAbility.Combainer.Combinations;
+
+                if (combinedAbilities.Count == 0) continue;
+
+                foreach (AbilityCombination combination in combinedAbilities)
+                {
+                    if (playerInventory.Find(combination.CombineResult) != null)
+                    {
+                        continue;
+                    }
+
+                    AbilityContainer combineInInventory = playerInventory.Find(combination.CombainedAbility);
+
+                    if (combination.AbleToCombine(combineInInventory))
+                    {
+                        if (combination.CombineResult != null)
+                        {
+                            inInventory = abilities.FindAll(item => item.Name.Equals(combination.CombineResult.Name)).Count;
+
+                            for (int i = 0; i < _combineAdditionalCount - inInventory; i++)
+                                abilities.Add(combination.CombineResult);
+                        }
+                    }
+
+                    if (combineInInventory != null && combineInInventory.IsMaxLevel) continue;
+
+                    inInventory = abilities.FindAll(item => item.Name.Equals(combination.CombainedAbility.Name)).Count;
+
+                    for (int i = 0; i < _combineAdditionalCount - inInventory; i++)
+                        abilities.Add(combineInInventory == null ? combination.CombainedAbility : combineInInventory);
+                }
+            }
+
+            if (playerInventory.PassiveAbilitiesCount >= playerInventory.MaxPassiveAbilitiesCount)
+            {
+                abilities.RemoveAll(item => item as PassiveAbility != null && playerInventory.Find(item) == null);
+            }
+
+            if (playerInventory.ActiveAbilitiesCount >= playerInventory.MaxActiveAbilitiesCount)
+            {
+                abilities.RemoveAll(item => item as Weapon != null && playerInventory.Find(item) == null && !(item as Weapon).IsSuper);
+            }
+
+            return abilities;
+        }
+
+        private List<AbilityContainer> GetSet(List<AbilityContainer> abilities)
+        {
+            List<AbilityContainer> set = new List<AbilityContainer>();
+
+            foreach (AbilityContainer ability in abilities)
+            {
+                if (set.Contains(ability)) continue;
+
+                set.Add(ability);
+            }
+
+            return set;
+        }
+
+        public Weapon GetRandomWeapon(List<Type> concreteWeaponTypes = null)
+        {
+            List<AbilityContainer> weapons = _abilities.FindAll(item => item as Weapon != null && (item as Weapon).IsSuper == false);
+
+            if (concreteWeaponTypes != null)
+            {
+                weapons.RemoveAll(item => !concreteWeaponTypes.Contains(item.GetType()));
+            }
+
+            return weapons[UnityEngine.Random.Range(0, weapons.Count)] as Weapon;
+        }
+
+        /// <summary>
+        /// Add ability to player
+        /// </summary>
+        /// <param name="ability">Ability need to add</param>
+        public void GetAbility(AbilityContainer ability)
+        {
+            _player.GetAbility(ability);
+
+            _levelUps--;
+
+            foreach(Upgrade upgrade in _additionalUpgradesForEachChoice)
+            {
+                _player.GetUpgrade(upgrade);
+            }
+
+            if (_levelUps > 0)
+            {
+                SetAbilities();
+            }
+            else
+            {
+                _menu.MainMenuHide();
+
+                _levelUps = 0;
+                _onChoice = false;
+            }
+        }
+
+        /// <summary>
+        /// Removes all abilities that player have in inventory. Also removes Passive/Active abilities if reached max count
+        /// </summary>
+        private void CleanupAbilities()
+        {
+            _abilities.RemoveAll(item => _player.AbilityInventory.Find(item) != null);
+
+            if (_player.AbilityInventory.PassiveAbilitiesCount >= _player.AbilityInventory.MaxPassiveAbilitiesCount)
+            {
+                _abilities.RemoveAll(item => item as PassiveAbility != null);
+            }
+
+            if (_player.AbilityInventory.ActiveAbilitiesCount >= _player.AbilityInventory.MaxActiveAbilitiesCount)
+            {
+                _abilities.RemoveAll(item => item as Weapon != null && !(item as Weapon).IsSuper);
+            }
+
+            for (int i = 0; i < _player.AbilityInventory.Weapons.Count; i++)
+            {
+                _weaponSlots[i].AbilityIcon.enabled = true;
+                _weaponSlots[i].Initialize(_player.AbilityInventory.Weapons[i]);
+            }
+
+            for (int i = 0; i < _player.AbilityInventory.PassiveAbilities.Count; i++)
+            {
+                _passiveSlots[i].AbilityIcon.enabled = true;
+                _passiveSlots[i].Initialize(_player.AbilityInventory.PassiveAbilities[i]);
+            }
+        }
+
+        public void OnRerollClick()
+        {
+            _rerolls++;
+
+            SetAbilities();
+        }
+    }
+}

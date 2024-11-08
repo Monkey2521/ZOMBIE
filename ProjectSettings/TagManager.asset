@@ -3,23 +3,36 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - PickableObject
+  - EnemiesList
+  - TargetDetector
+  - Ground
+  - ExpCrystal
+  - PlayerProjectile
+  - EnemyProjectile
+  - PlayerWeapon
+  - EnemyWeapon
+  - EnemyBoss
+  - PlayerObjectCatcher
+  - PickablesDropChest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TargetDetector
+  - BossFence
+  - Enemy
+  - Ground
+  - Chest
+  - MagnetDetector
+  - AreaCleanerDetector
+  - UI Particles
+  - PlayerObjectCatcher
   - 
   - 
   - 
@@ -40,4 +53,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Proops
+    uniqueID: 4094961679
+    locked: 0
+  - name: Enemy
+    uniqueID: 511968371
+    locked: 0
+  - name: Player
+    uniqueID: 2743357283
+    locked: 0
+  - name: UI
+    uniqueID: 4032070385
+    locked: 0
+  - name: UI Particles
+    uniqueID: 26017033
     locked: 0

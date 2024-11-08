@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2334115174524616619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2334115174524616617}
+  - component: {fileID: 2334115174524616616}
+  m_Layer: 0
+  m_Name: Shuriken ability
+  m_TagString: PlayerWeapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2334115174524616617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334115174524616619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4389665963760716672}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2334115174524616616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334115174524616619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d099429568e2464f9c3af5bb74a7c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _name: Shuriken
+  _icon: {fileID: 21300000, guid: 0f45635be7d78bd4baf8d7f079167ed6, type: 3}
+  _abilityCombainer:
+    _combinations:
+    - _combinedAbility: {fileID: 87203292017648079, guid: 306d1bfc0d0a18041bda8f6c8506a3d3, type: 3}
+      _combineResult: {fileID: 8423875939376286437, guid: e7dd076fec0e75b4d9e95a8fc4b7ef8e, type: 3}
+      _unlockLevel: 5
+      _removingAbilitiesOnCombine:
+      - {fileID: 2334115174524616616}
+  _sounds:
+    _sounds:
+    - _soundType: 5
+      _mixerType: 3
+      _sound: {fileID: 8300000, guid: bfb94688d4732244da414a8b11606e06, type: 3}
+      _playbackCooldown: 0.2
+  _isSuperWeapon: 0
+  _requiredAbilityToUpgradeToSuper: {fileID: 87203292017648079, guid: 306d1bfc0d0a18041bda8f6c8506a3d3, type: 3}
+  _targetDetector: {fileID: 102387575038401261}
+  _abilityUpgradeData: {fileID: 11400000, guid: bd2f488023831d94fb95447966597681, type: 2}
+  _scatterMultiplier: 0.15
+  _stats:
+    _abilityMarker: {fileID: 11400000, guid: 23f7de88458aeae42a6ab482de9196e7, type: 2}
+    _level:
+      _baseValue: 0
+      _minValue: 1
+      _maxValue: 5
+      _maxValueIsInfinite: 0
+    _cooldown:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 0a5cad1ab6615fb45a863ef1d87b7218, type: 2}
+    _damage:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 6777c73ca3053b14a88709b06fa31b76, type: 2}
+      _dealingDamageMarker: {fileID: 11400000, guid: 64d1d7d2a5e305d45a17edfcd218c08b, type: 2}
+      _criticalDamage:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 06a9b7dd90104c8468d24d6ff6ad9664, type: 2}
+        _chance:
+          _isDebug: 0
+          _statData: {fileID: 11400000, guid: 5639f7d002d8ca648b5b82336cf4d9f4, type: 2}
+    _attackRange:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 3bee52907337edb4f9bb7a99154e82f0, type: 2}
+    _projectilePrefab: {fileID: 3631064499566659635, guid: 534ceee815e4ebf4cba79338efcbcb3d, type: 3}
+    _destroyProjectilesOnAttack: 0
+    _projectileSize:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 1b78ba2f47932dd40842f1a3e3b7b495, type: 2}
+    _projectileLifeDuration:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 9bb2ce60c188daf4f9b5a3a906a2004f, type: 2}
+    _projectileNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 6450e8b2f1ea29e4a863539d8b9160f1, type: 2}
+    _projectilesSpawnInterval:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 77e34c56aea6f50448557c03950c95ed, type: 2}
+    _projectileSpeed:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: fc8a47309673cef46bbd9bf98f971534, type: 2}
+    _penetrationNumber:
+      _isDebug: 0
+      _statData: {fileID: 11400000, guid: 5dbe3e74698e6c945b71ddfc7242d41f, type: 2}
+      _valueIsInfinite: 1
+  _projectileStopDuration:
+    _isDebug: 0
+    _statData: {fileID: 11400000, guid: 1b909dcf1ae3d0e408b0b20cd12bea1e, type: 2}
+--- !u!1 &7782899719467573140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4389665963760716672}
+  - component: {fileID: 4243323679036428404}
+  - component: {fileID: 102387575038401261}
+  m_Layer: 0
+  m_Name: TargetDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4389665963760716672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782899719467573140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2334115174524616617}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4243323679036428404
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782899719467573140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &102387575038401261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782899719467573140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76eebe7863827741b6e730e39425249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _collider: {fileID: 4243323679036428404}
+  _triggerTags:
+    _tags: 01000000
+  _parent: {fileID: 2334115174524616619}
+  entered:
+    m_PersistentCalls:
+      m_Calls: []
+  exited:
+    m_PersistentCalls:
+      m_Calls: []

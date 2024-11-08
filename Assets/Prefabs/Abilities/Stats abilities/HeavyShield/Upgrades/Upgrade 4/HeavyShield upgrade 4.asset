@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: HeavyShield upgrade 4
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 1
+  _abilityMarker: {fileID: 11400000, guid: 71123db9532e7b846aa1f728e6918e26, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: e247a85208d269242a5c2a6a523bc9b1, type: 2}
+  - {fileID: 11400000, guid: 68d0bc53a7e22ba4ea07b29a52908c4e, type: 2}
+  - {fileID: 11400000, guid: 2d001732f31f24d4bb948226cff4a373, type: 2}

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
+  m_Name: MaxHP ability upgrade data
+  m_EditorClassIdentifier: 
+  _levelUpgrades:
+  - _descriptions:
+    - +20% max Health points
+    - +10% Shotgun Radius
+    _upgrade: {fileID: 11400000, guid: 23944034a377e794bb76fa73cbd67611, type: 2}
+    _requiredLevel: 0
+  - _descriptions:
+    - +20% max Health points
+    - +1 Shotgun Ammo
+    _upgrade: {fileID: 11400000, guid: 3c8941eef69a36d43943e6b86abac1ba, type: 2}
+    _requiredLevel: 1
+  - _descriptions:
+    - +20% max Health points
+    - +10% Shotgun Damage
+    _upgrade: {fileID: 11400000, guid: 0345748668331804c940fbcfbc3ed3df, type: 2}
+    _requiredLevel: 2
+  - _descriptions:
+    - +20% max Health points
+    - +1 Shotgun Ammo
+    _upgrade: {fileID: 11400000, guid: 28c39b0a6c5e63e47b26587051b88435, type: 2}
+    _requiredLevel: 3
+  - _descriptions:
+    - +20% max Health points
+    - +25% Shotgun Crit
+    - +10% Shotgun Crit rate
+    _upgrade: {fileID: 11400000, guid: b45d4ef9fe6d6d14888a6e772cc3217e, type: 2}
+    _requiredLevel: 4

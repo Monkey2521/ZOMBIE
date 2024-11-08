@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 56e03db4562af3b47a8dddf3a611e862
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _canvasGroup: {instanceID: 0}
+  - _button: {instanceID: 0}
+  - _animator: {instanceID: 0}
+  - _rouletteWindowsParent: {instanceID: 0}
+  - _rouletteWindowPrefab: {instanceID: 0}
+  - _rouletteSlotPrefab: {instanceID: 0}
+  - _equipmentTypesData: {instanceID: 0}
+  - _equipmentList: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

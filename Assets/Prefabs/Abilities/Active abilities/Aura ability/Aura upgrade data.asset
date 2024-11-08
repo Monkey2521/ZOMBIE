@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f20d3fe623ef34e8be0d78158f44ff, type: 3}
+  m_Name: Aura upgrade data
+  m_EditorClassIdentifier: 
+  _levelUpgrades:
+  - _descriptions:
+    - Deal damage around player
+    _upgrade: {fileID: 11400000, guid: 4d0d95aaea3f05742826b5ba5ffed717, type: 2}
+    _requiredLevel: 0
+  - _descriptions:
+    - +50% Aura Radius
+    _upgrade: {fileID: 11400000, guid: d517a689aa44f7b4e8869d7debaadc41, type: 2}
+    _requiredLevel: 1
+  - _descriptions:
+    - +25% Aura Damage
+    - -5% Aura Cooldown
+    _upgrade: {fileID: 11400000, guid: 9d1d6796b0da6d44a935c8db0978c17e, type: 2}
+    _requiredLevel: 2
+  - _descriptions:
+    - +25% Aura Damage
+    - +25% Aura Radius
+    _upgrade: {fileID: 11400000, guid: 8302eb45e1246c24e83d073534972bb3, type: 2}
+    _requiredLevel: 3
+  - _descriptions:
+    - +25% Aura Radius
+    - -5% Aura Cooldown
+    _upgrade: {fileID: 11400000, guid: 6b6c14b7de742fd41a8d81f9fe7c1e40, type: 2}
+    _requiredLevel: 4
+  _weapon: {fileID: 7494275413525525377, guid: 6f683db9e81f4ba46b85e11a1855c481, type: 3}

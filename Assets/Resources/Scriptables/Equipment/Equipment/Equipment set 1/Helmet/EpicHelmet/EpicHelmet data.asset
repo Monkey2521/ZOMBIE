@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e11ee933326fb4e820921713116bb7, type: 3}
+  m_Name: EpicHelmet data
+  m_EditorClassIdentifier: 
+  _isDebug: 0
+  _id: 0
+  _icon: {fileID: 21300000, guid: 2336d93be778ee8418eb1435b0026c59, type: 3}
+  _level:
+    _baseValue: 1
+    _minValue: 1
+    _maxValue: 30
+    _maxValueIsInfinite: 0
+  _upgradingStat: 1
+  _equipSlot: {fileID: 11400000, guid: 8c6377f48e4ab96439bae39c669d7da5, type: 2}
+  _rarity: {fileID: 11400000, guid: e5ed87d8e19550148b8c03a0197a5773, type: 2}
+  _mergeResult: {fileID: 11400000, guid: cb230afd23e4dc840916880eff2bf18b, type: 2}
+  _equipmentUpgrades:
+    _requiredEquipment: {fileID: 11400000, guid: 56a6798bac0434045813a24e337a0611, type: 2}
+    _requiredCurrency: {fileID: 11400000, guid: 024758ca41fd3194fba3f8c9a3a7d57a, type: 2}
+    _requiredMaterial: {fileID: 11400000, guid: 8a6e463088e1247459b4c3084188ac09, type: 2}
+    _upgrades:
+    - _requiredLevel: 1
+      _upgradeData: {fileID: 11400000, guid: 095f8eb5056645640b9b5e881ac50693, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 3
+        _requiredCurrencyAmount: 0
+        _requiredMaterialAmount: 0
+    - _requiredLevel: 2
+      _upgradeData: {fileID: 11400000, guid: ff12c2f3d51b8124892ce69552bf669a, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 750
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 3
+      _upgradeData: {fileID: 11400000, guid: e624c775a8a22bd47973ebcc2915d5a0, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 1000
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 4
+      _upgradeData: {fileID: 11400000, guid: bde0c672db225fc4db58b65007813025, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 1250
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 5
+      _upgradeData: {fileID: 11400000, guid: 77c9dc1fffc3f29499f49f87346058cb, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 1500
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 6
+      _upgradeData: {fileID: 11400000, guid: 9c8a66e03dc1bc14290f3564a9c6273a, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 1750
+        _requiredMaterialAmount: 5
+    - _requiredLevel: 7
+      _upgradeData: {fileID: 11400000, guid: 0ca5fd628d857ee4e933f0d466147cf2, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 2000
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 8
+      _upgradeData: {fileID: 11400000, guid: 226b61ccaff8bbe4c850151f07a89501, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 2250
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 9
+      _upgradeData: {fileID: 11400000, guid: 4e29025eebb7ca14d9e8046e0af5e7a8, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 2500
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 10
+      _upgradeData: {fileID: 11400000, guid: 219ed3813c0895242b78122d748151b3, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 2750
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 11
+      _upgradeData: {fileID: 11400000, guid: 0dfaf9154e4e687459246a3d781ccf4c, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 3000
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 12
+      _upgradeData: {fileID: 11400000, guid: 88b6133e90c26c0449faa64b9899a1ba, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 3250
+        _requiredMaterialAmount: 6
+    - _requiredLevel: 13
+      _upgradeData: {fileID: 11400000, guid: 2fb22c4ed240c9a4c85dd7506c9c3618, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 3500
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 14
+      _upgradeData: {fileID: 11400000, guid: 898d798a3b8f65a4d977b3a93f1fb78e, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 3750
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 15
+      _upgradeData: {fileID: 11400000, guid: 7b0e0f25fe19bac429c1919339bbf9f9, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 4000
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 16
+      _upgradeData: {fileID: 11400000, guid: 640e127ee07c1054c8a742db6b50bfa7, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 4250
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 17
+      _upgradeData: {fileID: 11400000, guid: 7ef85780240779545bb88e0c35f34c28, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 4500
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 18
+      _upgradeData: {fileID: 11400000, guid: b3c2819ce3ccd16419b51f81c1fbcaeb, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 4750
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 19
+      _upgradeData: {fileID: 11400000, guid: 4297c8e7758a00b4bbb9f20aa861a924, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5000
+        _requiredMaterialAmount: 7
+    - _requiredLevel: 20
+      _upgradeData: {fileID: 11400000, guid: 15f53392d6223a14ab1e3f697d98ade6, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5250
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 21
+      _upgradeData: {fileID: 11400000, guid: 05e65f701cd56d446a71c86eaae7201f, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5500
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 22
+      _upgradeData: {fileID: 11400000, guid: 78fc4f40a8a7cb349a1e994e62fe84bd, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 5750
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 23
+      _upgradeData: {fileID: 11400000, guid: 29876ff6d05870a4f9b306b19fdedef0, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 6000
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 24
+      _upgradeData: {fileID: 11400000, guid: 3a65dc35a5ba58e48a19cabab254e067, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 6250
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 25
+      _upgradeData: {fileID: 11400000, guid: 474b30cbf4ce2ba46b1a28d3b55a1f12, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 6500
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 26
+      _upgradeData: {fileID: 11400000, guid: ce5af857331866e4a855e4044895eb06, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 6750
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 27
+      _upgradeData: {fileID: 11400000, guid: 51ca9f6ba9dc9a24aa5e0a046cf062f3, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 7000
+        _requiredMaterialAmount: 8
+    - _requiredLevel: 28
+      _upgradeData: {fileID: 11400000, guid: f8db3895596cb4e4ba22f0afcaa77ed3, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 7250
+        _requiredMaterialAmount: 9
+    - _requiredLevel: 29
+      _upgradeData: {fileID: 11400000, guid: 16c15df24e718c54db1cbb45da7583a4, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 0
+        _requiredCurrencyAmount: 7500
+        _requiredMaterialAmount: 9
+    - _requiredLevel: 29
+      _upgradeData: {fileID: 11400000, guid: d74acf7cbaefd4443a7b9829dad63940, type: 2}
+      _upgradeMaterials:
+        _requiredEquipmentAmount: 30
+        _requiredCurrencyAmount: 8000
+        _requiredMaterialAmount: 10
+  _displayRarityDescription: 1
+  _rarityDescription: +5% Physical Damage Resistance
+  _rarityUpgrade: {fileID: 11400000, guid: f0acb4bcf96ad7845bb3f73874a86ad0, type: 2}
+  _previousRarityEquipment: {fileID: 11400000, guid: 56a6798bac0434045813a24e337a0611, type: 2}
+  _nextRarityEquipment: {fileID: 11400000, guid: cb230afd23e4dc840916880eff2bf18b, type: 2}

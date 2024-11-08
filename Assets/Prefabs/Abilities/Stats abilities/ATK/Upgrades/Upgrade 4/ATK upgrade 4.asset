@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fb7d36c8cf5a44ba8f8df8afcf1377, type: 3}
+  m_Name: ATK upgrade 4
+  m_EditorClassIdentifier: 
+  _isAbilityUpgrade: 1
+  _abilityMarker: {fileID: 11400000, guid: 975fa70a7d885174a9ceaca296ff5265, type: 2}
+  _upgrades:
+  - {fileID: 11400000, guid: 02de9dda5191dcc499f22072a24a7d1f, type: 2}
+  - {fileID: 11400000, guid: 0db7ff241e076a44a8804b3a6613915b, type: 2}

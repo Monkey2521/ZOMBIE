@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180d3f7693568d9439541f2b128d738a, type: 3}
+  m_Name: ATK ability upgrade data
+  m_EditorClassIdentifier: 
+  _levelUpgrades:
+  - _descriptions:
+    - +10% Damage
+    - -5% Blade Cooldown
+    _upgrade: {fileID: 11400000, guid: 58eb47f2a78564645a2b855ce104d026, type: 2}
+    _requiredLevel: 0
+  - _descriptions:
+    - +10% Damage
+    - +10% Blade Damage
+    _upgrade: {fileID: 11400000, guid: 0a6d68b968f691b4296591787f0fa30e, type: 2}
+    _requiredLevel: 1
+  - _descriptions:
+    - +10% Damage
+    - -5% Blade Cooldown
+    _upgrade: {fileID: 11400000, guid: ee48d270951bd6f49addbedc5d44e6e5, type: 2}
+    _requiredLevel: 2
+  - _descriptions:
+    - +10% Damage
+    - +10% Blade Damage
+    _upgrade: {fileID: 11400000, guid: fc899c3e4797edb44893a4b5e3d59c94, type: 2}
+    _requiredLevel: 3
+  - _descriptions:
+    - +10% Damage
+    - +20% Blade Radius
+    _upgrade: {fileID: 11400000, guid: 558b80d5dce9b5d4ea6e742c56aa87e9, type: 2}
+    _requiredLevel: 4

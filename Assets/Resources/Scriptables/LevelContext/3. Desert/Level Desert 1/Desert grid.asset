@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d230e91fd23bab943844d6637012742e, type: 3}
+  m_Name: Desert grid
+  m_EditorClassIdentifier: 
+  _cellSize: 15
+  _grid:
+  - {fileID: 7900278313227665657, guid: 72dbd2cb9ec6cd24191cc1f76561df1d, type: 3}
+  - {fileID: 7900278313227665657, guid: a0de0ff75a8cc8747928e8b261a72301, type: 3}
+  - {fileID: 7900278313227665657, guid: 535db41c0efbad342b49d1b5432266bb, type: 3}
+  - {fileID: 7900278313227665657, guid: 75fe58265e82d5247a4322b05dadf1cf, type: 3}

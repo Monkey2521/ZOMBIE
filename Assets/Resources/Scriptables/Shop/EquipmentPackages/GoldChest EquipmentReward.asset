@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4841ba79fb8f075419722f2f1df32b16, type: 3}
+  m_Name: GoldChest EquipmentReward
+  m_EditorClassIdentifier: 
+  _equipmentList: {fileID: 11400000, guid: a066a2c496f626a4e8395515bb6a81b4, type: 2}
+  _equipmentTypes: {fileID: 11400000, guid: a84433bd886f6ce40b23a75d8a3f39dc, type: 2}
+  _equipmentChances:
+    _spawnChances:
+    - _object: {fileID: 11400000, guid: 5369baa3ebb2b954181937e8aa8eb21c, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 294c8d8ec7d9d9a4faceec053fcb401e, type: 2}
+    - _object: {fileID: 11400000, guid: 516cae7c1d0e034458786d84bc649324, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 416a49b22ab394440a1ed7f1b820db1e, type: 2}
+    - _object: {fileID: 11400000, guid: 121076e06b125004aaa01a98737f1966, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 581df18a54291da46996ce00a96afff1, type: 2}
+    - _object: {fileID: 11400000, guid: 08d789c2a33904c4fb89a2fe75accfbe, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 1fb6b7f5af78b1d4d9f407d1e83eee96, type: 2}
+    - _object: {fileID: 11400000, guid: e5ed87d8e19550148b8c03a0197a5773, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: 9ec1d0283f5b73c448eb15a00e60df43, type: 2}
+    - _object: {fileID: 11400000, guid: 2085afd18811a3f468de7f5b09adeb3e, type: 2}
+      _spawnChance:
+        _isDebug: 0
+        _statData: {fileID: 11400000, guid: a62ef38fd86ba8f40be9eafd6ce2e669, type: 2}
+  _equipmentAmount: 1
